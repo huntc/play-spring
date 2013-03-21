@@ -7,21 +7,23 @@ import play.api.{Application, GlobalSettings}
 object Global extends GlobalSettings {
 
   /**
-   * Declare the application context to be used.
+   * Declare the application context to be used. AnnotationConfigApplicationContext cannot be refreshed so we can
+   * only do this once. We tell the context what packages to scan and then to refresh itself.
    */
   val ctx = new AnnotationConfigApplicationContext
+  ctx.scan("controllers", "services")
+  ctx.refresh()
 
   /**
-   * Configure the application context - tell it what packages to scan and then to refresh itself.
+   * Sync the context lifecycle with Play's.
    * @param app
    */
   override def onStart(app: Application) {
-    ctx.scan("controllers", "services")
-    ctx.refresh()
+    ctx.start()
   }
 
   /**
-   * Tidy up by closing down the application context.
+   * Sync the context lifecycle with Play's.
    * @param app
    */
   override def onStop(app: Application) {

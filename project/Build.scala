@@ -9,7 +9,9 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     "org.springframework" % "spring-context" % "3.2.2.RELEASE",
-    "javax.inject" % "javax.inject" % "1"
+    "javax.inject" % "javax.inject" % "1",
+
+    "org.mockito" % "mockito-core" % "1.9.5" % "test"
   )
 
 

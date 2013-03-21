@@ -1,4 +1,4 @@
-package test
+package controllers
 
 import org.specs2.mutable._
 
@@ -7,9 +7,9 @@ import play.api.test.Helpers._
 
 /**
  * add your integration spec here.
- * An integration test will fire up a whole play application in a real (or headless) browser
+ * A functional test will fire up a whole play application in a real (or headless) browser
  */
-class IntegrationSpec extends Specification {
+class ApplicationFT extends Specification {
   
   "Application" should {
     

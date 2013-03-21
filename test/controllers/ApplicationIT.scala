@@ -1,4 +1,4 @@
-package test
+package controllers
 
 import org.specs2.mutable._
 
@@ -10,7 +10,7 @@ import play.api.test.Helpers._
  * You can mock out a whole application including requests, plugins etc.
  * For more information, consult the wiki.
  */
-class ApplicationSpec extends Specification {
+class ApplicationIT extends Specification {
   
   "Application" should {
     
